@@ -1,0 +1,246 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Portal</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+                <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+                
+                <!-- loads the database/google stuff /><![endif]-->
+                <script src='addtofirebase.js'>
+                    </script>
+
+                <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWiXIYnt6G7c_CUUBn2RALg95iGdyv6sw&callback=initMap"
+                    type="text/javascript"></script>
+
+                <script src="addtofirebase.js">
+                    </script>
+                <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+                <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+                <link rel='stylesheet' type='text/css' href='/resources/tutorial/css/example.css'>
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+                                            <h1>Portal</h1>
+                                            
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Content -->
+							<section id="content" class="main">
+								<!-- Text -->
+									<section>
+                                                                                
+										<h2>Add Organization</h2>
+                                                                                <hr />
+                                                                                
+									</section>
+                                                                <!-- Form -->
+									<section>
+										<form method="post" action="#">
+											<div class="row uniform">
+                                                                                                
+												<div class="4u 12u$(xsmall)">
+													<input type="text" name="demo-name" id="demo-name" value="" placeholder="Organization Name" />
+												</div>
+												<div class="4u 12u$(xsmall)">
+													<input type="email" name="demo-email" id="demo-email" value="" placeholder="Organization Email" />
+												</div>
+                                                                                                <div class="4u 12u$(xsmall)">
+													<input type="text" name="demo-phonenumber" id="demo-phonenumber" value="" placeholder="Organization Phone Number" />
+												</div>
+                                                                                                <div class="6u 12u$(xsmall)">
+													<input type="text" name="demo-url" id="demo-url" value="" placeholder="Organization Website URL" />
+												</div>
+                                                                                                <div class="6u 12u$(xsmall)">
+													<input type="text" name="demo-address" id="address-input" value="" placeholder="Organization Address" />
+												</div>
+												<div class="6u 12u$(xsmall)">
+													<div class="select-wrapper">
+														<select name="demo-category" id="demo-category">
+															<option value="">- Area of Interest -</option>
+															<option value="Children">Children</option>
+															<option value="Developmentally Disabled">Developmentally Disabled</option>
+															<option value="Elderly">Elderly</option>
+															<option value="Impoverished">Impoverished</option>
+                                                                                                                        <option value="Environment">Environment</option>
+														</select>
+													</div>
+												</div>
+                                                                                                <div class="6u 12u$(xsmall)">
+													<input type="text" name="demo-contact" id="demo-contact" value="" placeholder="Contact Name" />
+												</div>
+                                                                                            
+                                                                                              
+												<div class="2u 12u$(small)">
+													<input type="checkbox" id="monday" name="monday">
+													<label for="monday">Monday</label>
+												</div>
+												<div class="2u 12u$(small)">
+													<input type="checkbox" id="tuesday" name="tuesday">
+													<label for="tuesday">Tuesday</label>
+												</div>
+                                                                                                <div class="2u 12u$(small)">
+													<input type="checkbox" id="wednesday" name="wednesday">
+													<label for="wednesday">Wednesday</label>
+												</div>
+                                                                                                <div class="2u 12u$(small)">
+													<input type="checkbox" id="thursday" name="thursday">
+													<label for="thursday">Thursday</label>
+												</div>
+                                                                                                <div class="2u 12u$(small)">
+													<input type="checkbox" id="friday" name="friday">
+													<label for="friday">Friday</label>
+												</div>
+                                                                                                <div class="2u 12u$(small)">
+													<input type="checkbox" id="saturday" name="saturday">
+													<label for="saturday">Saturday</label>
+												</div>
+                                                                                                <div class="2u 12u$(small)">
+													<input type="checkbox" id="sunday" name="sunday">
+													<label for="sunday">Sunday</label>
+												</div>
+                                                                                                <div class="2u 12u$(xsmall)">
+													<label for="hours">Hours Per Session</label>
+												</div>
+                                                                                                <div class="2u 12u$(xsmall)">
+													<input id="hours" type="number" value="1" min = "1" max = "12"/>
+												</div>
+												<div class="12u$">
+													<textarea name="demo-message" id="demo-message" placeholder="Enter Description" rows="6"></textarea>
+												</div>
+												<div class="12u$">
+													<ul class="actions">
+														<li><a href="#" class="button special" onclick = 'addNewAgency()'>Add Agency</a></li>
+														<li><input type="reset" value="Reset" /></li>
+													</ul>
+												</div>
+											</div>
+										</form>
+									</section>
+
+								
+<!--								 Table 
+									<section>
+										<h2>Table</h2>
+										<h3>Default</h3>
+										<div class="table-wrapper">
+											<table>
+												<thead>
+													<tr>
+														<th>Name</th>
+														<th>Description</th>
+														<th>Price</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>Item One</td>
+														<td>Ante turpis integer aliquet porttitor.</td>
+														<td>29.99</td>
+													</tr>
+													<tr>
+														<td>Item Two</td>
+														<td>Vis ac commodo adipiscing arcu aliquet.</td>
+														<td>19.99</td>
+													</tr>
+													<tr>
+														<td>Item Three</td>
+														<td> Morbi faucibus arcu accumsan lorem.</td>
+														<td>29.99</td>
+													</tr>
+													<tr>
+														<td>Item Four</td>
+														<td>Vitae integer tempus condimentum.</td>
+														<td>19.99</td>
+													</tr>
+													<tr>
+														<td>Item Five</td>
+														<td>Ante turpis integer aliquet porttitor.</td>
+														<td>29.99</td>
+													</tr>
+												</tbody>
+												<tfoot>
+													<tr>
+														<td colspan="2"></td>
+														<td>100.00</td>
+													</tr>
+												</tfoot>
+											</table>
+										</div>
+
+										<h3>Alternate</h3>
+										<div class="table-wrapper">
+											<table class="alt">
+												<thead>
+													<tr>
+														<th>Name</th>
+														<th>Description</th>
+														<th>Price</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>Item One</td>
+														<td>Ante turpis integer aliquet porttitor.</td>
+														<td>29.99</td>
+													</tr>
+													<tr>
+														<td>Item Two</td>
+														<td>Vis ac commodo adipiscing arcu aliquet.</td>
+														<td>19.99</td>
+													</tr>
+													<tr>
+														<td>Item Three</td>
+														<td> Morbi faucibus arcu accumsan lorem.</td>
+														<td>29.99</td>
+													</tr>
+													<tr>
+														<td>Item Four</td>
+														<td>Vitae integer tempus condimentum.</td>
+														<td>19.99</td>
+													</tr>
+													<tr>
+														<td>Item Five</td>
+														<td>Ante turpis integer aliquet porttitor.</td>
+														<td>29.99</td>
+													</tr>
+												</tbody>
+												<tfoot>
+													<tr>
+														<td colspan="2"></td>
+														<td>100.00</td>
+													</tr>
+												</tfoot>
+											</table>
+										</div>
+									</section>-->
+
+				<!-- Footer -->
+				
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
