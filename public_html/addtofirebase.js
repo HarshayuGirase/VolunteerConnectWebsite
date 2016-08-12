@@ -63,7 +63,7 @@ function addNewAgency()
     var isSunday = document.getElementById("sunday").checked;
     var address = document.getElementById("address-input").value;
     //var address = "32413 Pacific Grove Ct Union City"
-    var email = document.getElementById("demo-email").value;
+   
     var website = document.getElementById("demo-url").value;
     var description = document.getElementById("demo-message").value;
     var coordinates = ""; //DO NOT EDIT COORDINATES -- IT IS AUTOCALCULATED
@@ -72,7 +72,7 @@ function addNewAgency()
     if(contact === ""){contact = "N/A";}
     if(address === ""){address = "N/A";}
     if(website === ""){website = "N/A";}
-    if(email === ""){email = "N/A";}
+    
     
     getLocation(address, function(results) {  
         
@@ -96,7 +96,7 @@ function addNewAgency()
                 "Address": address,
                 "Website": website,
                 "Description" : description,
-                "Email" : email
+             
             }); 
         
         
