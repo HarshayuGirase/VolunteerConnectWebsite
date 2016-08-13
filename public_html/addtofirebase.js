@@ -27,6 +27,7 @@ function getLocation(address, callback)
     var latitude;
     var longitude;
     
+    
     geocoder.geocode( { 'address': address}, function(results, status)  {
               if (status == google.maps.GeocoderStatus.OK) {
                   latitude = results[0].geometry.location.lat();
@@ -62,7 +63,6 @@ function addNewAgency()
     var isSaturday = document.getElementById("saturday").checked;
     var isSunday = document.getElementById("sunday").checked;
     var address = document.getElementById("address-input").value;
-    //var address = "32413 Pacific Grove Ct Union City"
    
     var website = document.getElementById("demo-url").value;
     var description = document.getElementById("demo-message").value;
