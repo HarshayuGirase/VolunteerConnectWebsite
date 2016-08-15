@@ -99,7 +99,7 @@ function addNewAgency()
              
             }); 
         
-        
+        window.alert("Agency Added");
         var messagesRef = new Firebase("https://brilliant-fire-7361.firebaseio.com/Agency");
         messagesRef.once("value", function(allMessagesSnapshot) {
         allMessagesSnapshot.forEach(function(messageSnapshot) {
@@ -107,7 +107,7 @@ function addNewAgency()
             //console.log(agencyCor);
         });
         });
-        
+        arrayI.splice(0,2);
         //console.log(addAgency);
    
 });
