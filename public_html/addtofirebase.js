@@ -82,6 +82,7 @@ function addNewAgency()
         
         usersRef.child(agencyName).update({
                 "Coordinates": coordinates,
+                "Agency Name": agencyName,
                 "Area of Interest": areaInterest,
                 "Phone Number": phoneNumber,
                 "Contact": contact,
