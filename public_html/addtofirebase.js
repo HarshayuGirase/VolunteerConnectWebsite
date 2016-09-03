@@ -54,7 +54,7 @@ function addNewAgency()
     var areaInterest = document.getElementById("demo-category").value;
     var phoneNumber = document.getElementById("demo-phonenumber").value;
     var contact = document.getElementById("demo-contact").value;
-    var numHours = document.getElementById("hours").value; //must be an integer
+    var numHours = parseFloat(document.getElementById("hours").value); //must be an integer
     var isMonday = document.getElementById("monday").checked; //must be boolean
     var isTuesday = document.getElementById("tuesday").checked;
     var isWednesday = document.getElementById("wednesday").checked;
